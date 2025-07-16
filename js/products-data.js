@@ -3,7 +3,7 @@ const products = [
   // Active Foam - aktywne piany do samochodów osobowych
   {
     id: 1,
-    name: "Active Foam 1",
+    name: "Active Foam (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Profesjonalna aktywna piana do mycia samochodów osobowych. Skutecznie usuwa zabrudzenia i nadaje błyszczący efekt.",
@@ -15,7 +15,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Active Foam 2",
+    name: "Active Foam (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Zaawansowana formuła aktywnej piany z dodatkiem wosku. Idealna do regularnego mycia pojazdów.",
@@ -27,7 +27,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Active Foam 3",
+    name: "Active Foam (10.2 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Koncentrowana aktywna piana o wysokiej skuteczności. Bezpieczna dla lakieru i elementów plastikowych.",
@@ -39,7 +39,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Active Foam 4",
+    name: "Active Foam (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Uniwersalna aktywna piana do wszystkich typów pojazdów. Łagodna dla powierzchni, skuteczna w działaniu.",
@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 5,
-    name: "Active Foam 5",
+    name: "Active Foam 2 (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Premium aktywna piana z dodatkiem kondycjonera lakieru. Zapewnia długotrwały połysk.",
@@ -60,7 +60,7 @@ const products = [
   },
   {
     id: 6,
-    name: "Active Foam 6",
+    name: "Active Foam 2 (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Ekologiczna aktywna piana biodegradowalna. Przyjazna środowisku i skuteczna w czyszczeniu.",
@@ -72,7 +72,7 @@ const products = [
   },
   {
     id: 7,
-    name: "Active Foam 7",
+    name: "Active Foam 2 (10.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Aktywna piana o neutralnym pH. Idealna do delikatnych powierzchni i częstego użytkowania.",
@@ -84,7 +84,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Active Foam 8",
+    name: "Active Foam 2 (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Wzmocniona aktywna piana do silnych zabrudzeń. Skutecznie radzi sobie z trudnymi plamami.",
@@ -93,7 +93,7 @@ const products = [
   },
   {
     id: 9,
-    name: "Active Foam 9",
+    name: "Active Foam 3 (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Szybko działająca aktywna piana. Oszczędza czas i zapewnia doskonałe rezultaty mycia.",
@@ -105,7 +105,7 @@ const products = [
   },
   {
     id: 10,
-    name: "Active Foam 10",
+    name: "Active Foam 3 (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Aktywna piana z dodatkiem enzymów. Naturalnie rozkłada zabrudzenia organiczne.",
@@ -117,7 +117,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Active Foam 11",
+    name: "Active Foam 3 (10.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Profesjonalna aktywna piana do myjni samochodowych. Wysokowydajna i ekonomiczna.",
@@ -129,7 +129,7 @@ const products = [
   },
   {
     id: 12,
-    name: "Active Foam 12",
+    name: "Active Foam 3 (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
       "Innowacyjna aktywna piana nowej generacji. Wykorzystuje najnowsze technologie czyszczenia.",
@@ -140,7 +140,7 @@ const products = [
   // Active Foam Truck - aktywne piany do ciężarówek
   {
     id: 13,
-    name: "Active Foam Truck 1",
+    name: "Active Foam Truck 1 (1 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Specjalna aktywna piana do mycia ciężarówek i pojazdów użytkowych. Usuwa najtrudniejsze zabrudzenia.",
@@ -152,7 +152,7 @@ const products = [
   },
   {
     id: 14,
-    name: "Active Foam Truck 2",
+    name: "Active Foam Truck 1 (5.5 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Wzmocniona formuła do czyszczenia pojazdów ciężkich. Skuteczna przeciwko olejom i smarom.",
@@ -164,7 +164,7 @@ const products = [
   },
   {
     id: 15,
-    name: "Active Foam Truck 3",
+    name: "Active Foam Truck 1 (11.1 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Przemysłowa aktywna piana do flotowych myć ciężarówek. Optymalizowana do wielkoskalowego użycia.",
@@ -176,7 +176,7 @@ const products = [
   },
   {
     id: 16,
-    name: "Active Foam Truck 4",
+    name: "Active Foam Truck 1 (22 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Aktywna piana do ciężarówek z dodatkiem odtłuszczacza. Idealnie usuwa zabrudzenia drogowe.",
@@ -185,7 +185,7 @@ const products = [
   },
   {
     id: 17,
-    name: "Active Foam Truck 5",
+    name: "Active Foam Truck 2 (1 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Koncentrowana aktywna piana do pojazdów ciężkich. Ekonomiczne rozwiązanie dla firm transportowych.",
@@ -197,7 +197,7 @@ const products = [
   },
   {
     id: 18,
-    name: "Active Foam Truck 6",
+    name: "Active Foam Truck 2 (6 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Biodegradowalna aktywna piana do ciężarówek. Przyjazna środowisku i bardzo skuteczna.",
@@ -209,7 +209,7 @@ const products = [
   },
   {
     id: 19,
-    name: "Active Foam Truck 7",
+    name: "Active Foam Truck 2 (11 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Alkaliczna aktywna piana do trudnych zabrudzeń na ciężarówkach. Szybkie i skuteczne działanie.",
@@ -221,7 +221,7 @@ const products = [
   },
   {
     id: 20,
-    name: "Active Foam Truck 8",
+    name: "Active Foam Truck 2 (22 kg)",
     category: "Aktywna Piana - Ciężarówki",
     description:
       "Profesjonalna aktywna piana do myjni ciężarówek. Wysokie stężenie aktywnych składników.",
@@ -232,7 +232,7 @@ const products = [
   // Engine Cleaner - środki do czyszczenia silników
   {
     id: 21,
-    name: "Engine Cleaner 1",
+    name: "Engine Cleaner (1 kg)",
     category: "Środki do Silników",
     description:
       "Profesjonalny środek do czyszczenia silników. Skutecznie usuwa osady oleju, smaru i brudu.",
@@ -244,7 +244,7 @@ const products = [
   },
   {
     id: 22,
-    name: "Engine Cleaner 2",
+    name: "Engine Cleaner (5 kg)",
     category: "Środki do Silników",
     description:
       "Biodegradowalny środek do czyszczenia komór silnikowych. Bezpieczny dla elektroniki i uszczelek.",
@@ -256,7 +256,7 @@ const products = [
   },
   {
     id: 23,
-    name: "Engine Cleaner 3",
+    name: "Engine Cleaner (10 kg)",
     category: "Środki do Silników",
     description:
       "Wzmocniony środek do czyszczenia silników przemysłowych. Idealny do maszyn budowlanych i rolniczych.",
@@ -268,7 +268,7 @@ const products = [
   },
   {
     id: 24,
-    name: "Engine Cleaner 4",
+    name: "Engine Cleaner (20 kg)",
     category: "Środki do Silników",
     description:
       "Uniwersalny środek do czyszczenia wszystkich typów silników. Łagodny dla powierzchni, skuteczny w działaniu.",

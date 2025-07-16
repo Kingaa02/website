@@ -1,6 +1,6 @@
 // Zmienne globalne dla produktów
 let currentDisplayedProducts = 0;
-const productsPerPage = 8;
+const productsPerPage = 9;
 let filteredProducts = [...products];
 
 // Funkcja do tworzenia karty produktu
@@ -23,7 +23,6 @@ function createProductCard(product) {
             ${imagesHtml}
         </div>
         <div class="product-info">
-            <div class="product-category">${product.category}</div>
             <h3>${product.name}</h3>
             <p class="product-description">${product.description}</p>
         </div>
