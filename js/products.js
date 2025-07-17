@@ -31,10 +31,6 @@ function createProductCard(product) {
         <div class="product-info">
             <h3>${product.name}</h3>
             <p class="product-description">${product.description}</p>
-            <div class="product-click-hint">
-                <i class="fas fa-arrow-right"></i>
-                <span>Kliknij aby zobaczyć szczegóły</span>
-            </div>
         </div>
     `;
 
