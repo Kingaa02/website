@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produkt - Spark</title>
+    <link rel="stylesheet" href="style-modular.css?v=20250116-002" />
+    <link rel="stylesheet" href="css/product-page.css?v=20250116-001" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <div class="logo-text">[LOGO]</div>
+          <div class="company-name">Spark</div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Strona główna</a></li>
+          <li><a href="index.html#products">Produkty</a></li>
+          <li><a href="index.html#about">O nas</a></li>
+          <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+      <div class="container">
+        <div class="product-back">
+          <a href="index.html#products" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Powrót do produktów
+          </a>
+        </div>
+
+        <div class="product-content">
+          <!-- Lewa kolumna - Galeria + Kontakt -->
+          <div class="product-gallery">
+            <div class="gallery-main-content">
+              <div class="main-image">
+                <img id="mainProductImage" src="" alt="Produkt" />
+              </div>
+              <div class="thumbnail-gallery" id="thumbnailGallery">
+                <!-- Miniaturki będą dodane przez JavaScript -->
+              </div>
+            </div>
+
+            <!-- Kontakt na dole lewej kolumny -->
+            <div class="contact-product">
+              <h3>Potrzebujesz więcej informacji?</h3>
+              <p>Skontaktuj się z nami w sprawie tego produktu</p>
+              <a href="index.html#contact" class="btn-primary"
+                >Skontaktuj się</a
+              >
+            </div>
+          </div>
+
+          <!-- Prawa kolumna - Tytuł + Cechy + Materiały -->
+          <div class="product-right-section">
+            <div class="product-features-content">
+              <!-- Tytuł produktu na górze -->
+              <div class="product-header">
+                <div class="product-category" id="productCategory"></div>
+                <h1 id="productName"></h1>
+              </div>
+
+              <!-- Cechy produktu -->
+              <div class="product-features">
+                <h3>Główne cechy:</h3>
+                <ul id="productFeatures">
+                  <!-- Cechy będą dodane przez JavaScript -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- Materiały na dole prawej kolumny -->
+            <div class="product-downloads">
+              <h3>Materiały do pobrania:</h3>
+              <div class="download-buttons">
+                <!-- Przyciski będą dodane przez JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Dolny rząd - Tylko opis (na całą szerokość) -->
+          <div class="product-info-detailed">
+            <div class="product-description-full" id="productDescription"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Spark</h3>
+            <p>
+              Innowacyjne rozwiązania w chemii samochodowej. Tworzymy produkty
+              przyszłości dla branży motoryzacyjnej.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Szybkie linki</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Strona główna</a></li>
+              <li><a href="index.html#products">Produkty</a></li>
+              <li><a href="index.html#about">O nas</a></li>
+              <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p><i class="fas fa-envelope"></i> info@spark-chem.pl</p>
+            <p><i class="fas fa-phone"></i> +48 123 456 789</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> ul. Przemysłowa 10<br />00-001
+              Warszawa
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Spark. Wszelkie prawa zastrzeżone.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/product-page.js"></script>
+    <script src="js/navigation.js"></script>
+  </body>
+</html>

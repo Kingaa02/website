@@ -7,6 +7,12 @@ let filteredProducts = [...products];
 function createProductCard(product) {
   const productCard = document.createElement("div");
   productCard.className = "product-card fade-in";
+  productCard.style.cursor = "pointer";
+
+  // Dodanie event listenera do kliknięcia
+  productCard.addEventListener("click", () => {
+    window.location.href = `product.html?id=${product.id}`;
+  });
 
   // Tworzenie sekcji ze zdjęciami
   const imagesHtml = product.images
@@ -25,6 +31,10 @@ function createProductCard(product) {
         <div class="product-info">
             <h3>${product.name}</h3>
             <p class="product-description">${product.description}</p>
+            <div class="product-click-hint">
+                <i class="fas fa-arrow-right"></i>
+                <span>Kliknij aby zobaczyć szczegóły</span>
+            </div>
         </div>
     `;
 

@@ -107,17 +107,29 @@
   font-weight: 600;
 }
 
-.product-category {
-  color: #4ecdc4;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
-
 .product-description {
   color: #b0b0b0;
   font-size: 0.9rem;
   line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.product-click-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff4500;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-click-hint {
+  opacity: 1;
+}
+
+.product-click-hint i {
+  font-size: 0.7rem;
 }
 
 .load-more-container {

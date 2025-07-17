@@ -1,12 +1,12 @@
-// Dane produktów na podstawie struktury folderów
+// Dane produktów - TYLKO 24 produkty
 const products = [
-  // Active Foam - aktywne piany do samochodów osobowych
+  // Active Foam 1 - aktywne piany do samochodów osobowych (ID 1-4)
   {
     id: 1,
-    name: "Active Foam (1 kg)",
+    name: "Active Foam 1 (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Profesjonalna aktywna piana do mycia samochodów osobowych. Skutecznie usuwa zabrudzenia i nadaje błyszczący efekt.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 1/Active_foam_1_1.png",
       "images/Active foam 1/Active_foarm_1_2.png",
@@ -15,10 +15,10 @@ const products = [
   },
   {
     id: 2,
-    name: "Active Foam (5.5 kg)",
+    name: "Active Foam 1 (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Zaawansowana formuła aktywnej piany z dodatkiem wosku. Idealna do regularnego mycia pojazdów.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 2/Active_foam_2_1.png",
       "images/Active foam 2/Active_foam_2_2.png",
@@ -27,10 +27,10 @@ const products = [
   },
   {
     id: 3,
-    name: "Active Foam (10.2 kg)",
+    name: "Active Foam 1 (10.2 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Koncentrowana aktywna piana o wysokiej skuteczności. Bezpieczna dla lakieru i elementów plastikowych.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 3/Active_foam_3_1.png",
       "images/Active foam 3/Active_foam_3_2.png",
@@ -39,19 +39,21 @@ const products = [
   },
   {
     id: 4,
-    name: "Active Foam (21 kg)",
+    name: "Active Foam 1 (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Uniwersalna aktywna piana do wszystkich typów pojazdów. Łagodna dla powierzchni, skuteczna w działaniu.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: ["images/Active foam 4/Active_foam_4.png"],
     type: "active-foam",
   },
+
+  // Active Foam 2 - aktywne piany do samochodów osobowych (ID 5-8)
   {
     id: 5,
     name: "Active Foam 2 (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Premium aktywna piana z dodatkiem kondycjonera lakieru. Zapewnia długotrwały połysk.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 5/Active_foam_5_1.png",
       "images/Active foam 5/Active_foam_5_2.png",
@@ -63,7 +65,7 @@ const products = [
     name: "Active Foam 2 (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Ekologiczna aktywna piana biodegradowalna. Przyjazna środowisku i skuteczna w czyszczeniu.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 6/Active_foam_6_1.png",
       "images/Active foam 6/Active_foam_6_2.png",
@@ -75,7 +77,7 @@ const products = [
     name: "Active Foam 2 (10.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Aktywna piana o neutralnym pH. Idealna do delikatnych powierzchni i częstego użytkowania.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 7/Active_foam_7_1.png",
       "images/Active foam 7/Active_foam_7_2.png",
@@ -87,16 +89,18 @@ const products = [
     name: "Active Foam 2 (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Wzmocniona aktywna piana do silnych zabrudzeń. Skutecznie radzi sobie z trudnymi plamami.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: ["images/Active foam 8/Active_foam_8.png"],
     type: "active-foam",
   },
+
+  // Active Foam 3 - aktywne piany do samochodów osobowych (ID 9-12)
   {
     id: 9,
     name: "Active Foam 3 (1 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Szybko działająca aktywna piana. Oszczędza czas i zapewnia doskonałe rezultaty mycia.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 9/Active_foam_9_1.png",
       "images/Active foam 9/Active_foam_9_2.png",
@@ -108,7 +112,7 @@ const products = [
     name: "Active Foam 3 (5.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Aktywna piana z dodatkiem enzymów. Naturalnie rozkłada zabrudzenia organiczne.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 10/Active_foam_10_1.png",
       "images/Active foam 10/Active_foam_10_2.png",
@@ -120,7 +124,7 @@ const products = [
     name: "Active Foam 3 (10.5 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Profesjonalna aktywna piana do myjni samochodowych. Wysokowydajna i ekonomiczna.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: [
       "images/Active foam 11/Active_foam_11_1.png",
       "images/Active foam 11/Active_foam_10_2.png",
@@ -132,12 +136,12 @@ const products = [
     name: "Active Foam 3 (21 kg)",
     category: "Aktywna Piana - Samochody",
     description:
-      "Innowacyjna aktywna piana nowej generacji. Wykorzystuje najnowsze technologie czyszczenia.",
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, olej silnikowy i resztki insektów.",
     images: ["images/Active foam 12/Active_foam_12.png"],
     type: "active-foam",
   },
 
-  // Active Foam Truck - aktywne piany do ciężarówek
+  // Active Foam Truck 1 - aktywne piany do ciężarówek (ID 13-16)
   {
     id: 13,
     name: "Active Foam Truck 1 (1 kg)",
@@ -183,6 +187,8 @@ const products = [
     images: ["images/Active foam truck 4/Active_foam_truck_4.png"],
     type: "active-foam-truck",
   },
+
+  // Active Foam Truck 2 - aktywne piany do ciężarówek (ID 17-20)
   {
     id: 17,
     name: "Active Foam Truck 2 (1 kg)",
@@ -229,7 +235,7 @@ const products = [
     type: "active-foam-truck",
   },
 
-  // Engine Cleaner - środki do czyszczenia silników
+  // Engine Cleaner - środki do czyszczenia silników (ID 21-24)
   {
     id: 21,
     name: "Engine Cleaner (1 kg)",
@@ -279,3 +285,47 @@ const products = [
 
 // Eksportuj dane produktów
 window.sparkProducts = products;
+
+function displayProductDetails(product) {
+  // Kategoria
+  document.getElementById("productCategory").textContent = product.category;
+
+  // Nazwa produktu
+  document.getElementById("productName").textContent = product.name;
+
+  // Szczegółowy opis dla produktów Active Foam 1
+  let detailedDescription = product.description;
+
+  if (product.name.includes("Active Foam 1")) {
+    // Wyciągnij wagę z nazwy produktu
+    const weightMatch = product.name.match(/\(([\d.,]+)\s*kg\)/);
+    const weight = weightMatch ? weightMatch[1] : "nie określona";
+
+    detailedDescription = `Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego pojazdów. Skutecznie usuwa brud drogowy, zanieczyszczenia, olej silnikowy oraz resztki insektów z powierzchni karoserii.
+
+Produkt nie uszkadza powłok wykonanych z metali nieżelaznych, a powstająca piana łatwo spływa z powierzchni. Zawiera specjalne dodatki antykorozyjne, które chronią metalowe elementy pojazdu podczas procesu mycia.
+
+Formuła jest w pełni kompatybilna z każdym systemem dozowania w samoobsługowych stacjach myjni, co czyni ją idealnym wyborem zarówno dla zastosowań zawodowych, jak i konsumenckich (gospodarstwa domowe).
+
+Waga opakowania: ${weight} kg
+Przeznaczenie: Zastosowanie zawodowe i konsumenckie
+Typ aplikacji: Mycie bezdotykowe`;
+  }
+
+  document.getElementById("productDescription").innerHTML =
+    detailedDescription.replace(/\n/g, "<br><br>");
+
+  // Cechy produktu
+  const features = generateProductFeatures(product);
+  const featuresList = document.getElementById("productFeatures");
+  featuresList.innerHTML = "";
+
+  features.forEach((feature) => {
+    const li = document.createElement("li");
+    li.textContent = feature;
+    featuresList.appendChild(li);
+  });
+
+  // Aktualizuj tytuł strony
+  document.title = `${product.name} - Spark`;
+}
