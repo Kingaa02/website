@@ -1,7 +1,7 @@
 /* About Section */
 .about {
   padding: 4.8rem 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
 }
 
 .about-content {
@@ -13,13 +13,15 @@
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 1.2rem;
-  color: #333;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .about-text p {
-  color: #666;
-  margin-bottom: 1.2rem;
-  line-height: 1.8;
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
 .stats {
@@ -31,21 +33,29 @@
 
 .stat {
   text-align: center;
-  padding: 1.2rem;
-  background: white;
+  padding: 1.5rem;
+  background: rgba(40, 40, 40, 0.6);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 69, 0, 0.2);
+  border-color: rgba(255, 69, 0, 0.4);
 }
 
 .stat-number {
   display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #667eea;
-  margin-bottom: 0.4rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff4500;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  color: #666;
-  font-size: 0.8rem;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
