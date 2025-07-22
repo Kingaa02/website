@@ -18,6 +18,3 @@ Główny plik CSS - importuje wszystkie moduły
 
 /* Animacje i efekty */
 @import url("./css/animations.css");
-
-/* Responsive design */
-@import url("./css/responsive.css");
