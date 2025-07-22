@@ -13,7 +13,7 @@ Główny plik CSS - importuje wszystkie moduły
 @import url("./css/features.css?v=20250116-001");
 @import url("./css/products.css?v=20250116-001");
 @import url("./css/about.css?v=20250116-001");
-@import url("./css/contact.css?v=20250116-001");
+@import url("./css/contact.css?v=20250116-002");
 @import url("./css/footer.css?v=20250116-001");
 
 /* Animacje i efekty */

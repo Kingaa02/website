@@ -12,7 +12,8 @@
   display: flex; /* DODANE */
   justify-content: space-between; /* DODANE */
   align-items: center; /* DODANE */
-  padding: 0 2rem; /* DODANE */
+  padding: 0.6rem 2rem; /* ZMNIEJSZONE z 1rem 2rem */
+  min-height: 65px; /* ZMNIEJSZONE z 80px */
 }
 
 .navbar.scrolled {
@@ -31,7 +32,7 @@
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 1.6rem;
+  gap: 2rem; /* ZWIĘKSZONE z 1.6rem */
   margin: 0; /* POPRAWIONE */
   padding: 0; /* DODANE */
 }
@@ -40,12 +41,27 @@
   color: #e0e0e0;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.1rem; /* DODANE - większy tekst */
   transition: color 0.3s ease;
-  padding: 1rem 0; /* DODANE dla większego obszaru kliknięcia */
+  padding: 1rem 0; /* ZMNIEJSZONE z 1.2rem dla kompaktowości */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* DODANE - odstęp między ikoną a tekstem */
+}
+
+.nav-menu a i {
+  font-size: 0.9rem; /* DODANE - rozmiar ikon */
+  color: #cccccc; /* ZMIENIONE z #ff4500 na szary odcień */
+  transition: transform 0.3s ease, color 0.3s ease; /* DODANE - animacja koloru */
 }
 
 .nav-menu a:hover {
   color: #ff4500;
+}
+
+.nav-menu a:hover i {
+  transform: scale(1.2); /* DODANE - animacja ikon przy hover */
+  color: #ffffff; /* DODANE - ikony stają się białe przy hover */
 }
 
 .hamburger {
@@ -64,9 +80,9 @@
 
 /* Logo Styles */
 .logo {
-  height: 50px;
+  height: 55px; /* ZMNIEJSZONE z 65px */
   width: auto;
-  max-width: 200px;
+  max-width: 220px; /* ZMNIEJSZONE z 250px */
   transition: transform 0.3s ease;
   filter: brightness(1);
 }
@@ -79,7 +95,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 1.5rem;
+    padding: 0.5rem 1.5rem; /* ZMNIEJSZONE */
+    min-height: 60px; /* ZMNIEJSZONE z 70px */
   }
 
   .hamburger {
@@ -89,7 +106,7 @@
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 60px; /* DOSTOSOWANE do mniejszego navbar */
     flex-direction: column;
     background: rgba(20, 20, 20, 0.98);
     width: 100%;
@@ -99,23 +116,29 @@
     padding: 2rem 0;
   }
 
+  .nav-menu a {
+    font-size: 1rem; /* ZMNIEJSZONE na mobile */
+    padding: 1rem 0;
+  }
+
   .nav-menu.active {
     left: 0;
   }
 
   .logo {
-    height: 40px;
-    max-width: 150px;
+    height: 45px; /* ZMNIEJSZONE z 50px */
+    max-width: 160px; /* ZMNIEJSZONE z 180px */
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0 1rem;
+    padding: 0.4rem 1rem; /* ZMNIEJSZONE */
+    min-height: 55px; /* ZMNIEJSZONE z 65px */
   }
 
   .logo {
-    height: 35px;
-    max-width: 120px;
+    height: 40px; /* ZMNIEJSZONE z 45px */
+    max-width: 130px; /* ZMNIEJSZONE z 140px */
   }
 }
