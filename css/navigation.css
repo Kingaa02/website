@@ -9,6 +9,10 @@
   box-shadow: 0 2px 20px rgba(255, 69, 0, 0.3);
   z-index: 1000;
   transition: background 0.3s ease;
+  display: flex; /* DODANE */
+  justify-content: space-between; /* DODANE */
+  align-items: center; /* DODANE */
+  padding: 0 2rem; /* DODANE */
 }
 
 .navbar.scrolled {
@@ -17,42 +21,19 @@
   box-shadow: 0 2px 20px rgba(255, 69, 0, 0.5);
 }
 
-.nav-container {
-  max-width: 100%;
-  margin: 0;
-  padding: 0 36px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* USUŃ .nav-container - nie używane */
 
-.nav-logo {
+.nav-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: -12px;
-}
-
-.logo-text {
-  background: linear-gradient(45deg, #ff4500, #ff6b35);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.company-name {
-  color: #cccccc;
-  font-size: 1.5rem;
-  font-weight: 500;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 1.6rem;
-  margin-right: -12px;
+  margin: 0; /* POPRAWIONE */
+  padding: 0; /* DODANE */
 }
 
 .nav-menu a {
@@ -60,6 +41,7 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 1rem 0; /* DODANE dla większego obszaru kliknięcia */
 }
 
 .nav-menu a:hover {
@@ -78,4 +60,62 @@
   background: white;
   margin: 3px 0;
   transition: 0.3s;
+}
+
+/* Logo Styles */
+.logo {
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  transition: transform 0.3s ease;
+  filter: brightness(1);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .hamburger {
+    display: flex; /* POKAZUJ hamburgera na mobile */
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: rgba(20, 20, 20, 0.98);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    backdrop-filter: blur(15px);
+    padding: 2rem 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .logo {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 35px;
+    max-width: 120px;
+  }
 }
