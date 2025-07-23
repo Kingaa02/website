@@ -91,10 +91,10 @@ function displayProducts() {
   // Wyczyść siatkę produktów
   productsGrid.innerHTML = "";
 
-  // Dodaj karty dla czterech pierwszych produktów (jeśli istnieją)
+  // Dodaj karty dla sześciu pierwszych produktów (jeśli istnieją)
   let realProducts = 0;
   if (products && products.length > 0) {
-    for (let i = 0; i < 4 && i < products.length; i++) {
+    for (let i = 0; i < 6 && i < products.length; i++) {
       console.log("✅ Tworzenie karty dla produktu:", products[i].name);
       const productCard = createProductCard(products[i], false);
       productsGrid.appendChild(productCard);
