@@ -1,18 +1,19 @@
 /* filepath: c:\Users\LENOVO\Desktop\website\js\product-page.js */
 // Product Page JavaScript
 document.addEventListener("DOMContentLoaded", function () {
+  setupVolumeButtons();
   // Pobierz ID produktu z URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = parseInt(urlParams.get("id"));
 
-  if (!productId || !window.sparkProducts) {
+  if (!productId || !products) {
     console.error("Nie znaleziono produktu");
     window.location.href = "index.html";
     return;
   }
 
   // Znajdź produkt
-  const product = window.sparkProducts.find((p) => p.id === productId);
+  const product = products.find((p) => p.id === productId);
 
   if (!product) {
     console.error("Produkt nie istnieje");
@@ -59,6 +60,12 @@ function showComingSoonMessage(product) {
 }
 
 function generateProductFeatures(product) {
+  // Użyj cech z product.details.features jeśli istnieją
+  if (product.details && product.details.features) {
+    return product.details.features;
+  }
+
+  // Fallback - stare cechy statyczne
   const baseFeatures = [
     "Wysoka koncentracja składników aktywnych",
     "Doskonały efekt pienienia",
@@ -66,7 +73,7 @@ function generateProductFeatures(product) {
   ];
 
   if (
-    product.type === "active-foam" &&
+    product.category === "active-foam" &&
     product.name.includes("Active Foam 1")
   ) {
     return [
@@ -144,6 +151,8 @@ Typ aplikacji: Mycie bezdotykowe`;
 }
 
 function setupImageGallery(product) {
+  // Ustaw obsługę przycisków objętości pod galerią
+  setupVolumeButtons(product);
   const mainImage = document.getElementById("mainProductImage");
   const thumbnailGallery = document.getElementById("thumbnailGallery");
 
@@ -190,6 +199,32 @@ function setupImageGallery(product) {
   }
 }
 
+function setupVolumeButtons(product) {
+  // Obsługa przycisków objętości pod galerią
+  const volumeButtons = document.querySelectorAll(
+    ".product-volumes-list .volume-item"
+  );
+  const mainImage = document.getElementById("mainProductImage");
+  if (!volumeButtons.length || !product || !mainImage) return;
+
+  volumeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Zmień zdjęcie na odpowiedni indeks
+      const idx = parseInt(this.getAttribute("data-image-index"), 10);
+      if (product.images[idx]) {
+        mainImage.src = product.images[idx];
+        mainImage.alt = product.name + " - zdjęcie " + (idx + 1);
+      }
+      // Ustaw aktywny przycisk
+      volumeButtons.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+      // Przeskakująca ramka w miniaturkach
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      thumbnails.forEach((t, i) => t.classList.toggle("active", i === idx));
+    });
+  });
+}
+
 function setupDownloadLinks(product) {
   const downloadsSection = document.querySelector(".product-downloads");
   const downloadButtons = document.querySelector(".download-buttons");
@@ -197,22 +232,34 @@ function setupDownloadLinks(product) {
   // Wyczyść istniejące przyciski
   downloadButtons.innerHTML = "";
 
-  // Dla produktów Active Foam 1 - "Charakterystyka produktu (SDS)"
-  if (product.name.includes("Active Foam 1")) {
-    const sdsBtn = createDownloadButton(
-      "fas fa-file-alt",
-      "Charakterystyka produktu (SDS)",
-      "downloads/SDS-SPARK_Active_Foam_1-PL-pl.pdf"
-    );
-    downloadButtons.appendChild(sdsBtn);
+  // Użyj linków z product.details.downloads jeśli istnieją
+  if (product.details && product.details.downloads) {
+    product.details.downloads.forEach((download) => {
+      const button = createDownloadButton(
+        "fas fa-file-alt",
+        download.name,
+        download.url
+      );
+      downloadButtons.appendChild(button);
+    });
   } else {
-    // Dla pozostałych produktów - zwykła "Charakterystyka produktu"
-    const characteristicBtn = createDownloadButton(
-      "fas fa-file-alt",
-      "Charakterystyka produktu",
-      generateCharacteristicFilename(product)
-    );
-    downloadButtons.appendChild(characteristicBtn);
+    // Fallback - stare linki dla Active Foam 1
+    if (product.name.includes("Active Foam 1")) {
+      const sdsBtn = createDownloadButton(
+        "fas fa-file-alt",
+        "Charakterystyka produktu (SDS)",
+        "downloads/SDS-SPARK_Active_Foam_1-PL-pl.pdf"
+      );
+      downloadButtons.appendChild(sdsBtn);
+    } else {
+      // Dla pozostałych produktów - zwykła "Charakterystyka produktu"
+      const characteristicBtn = createDownloadButton(
+        "fas fa-file-alt",
+        "Charakterystyka produktu",
+        generateCharacteristicFilename(product)
+      );
+      downloadButtons.appendChild(characteristicBtn);
+    }
   }
 }
 

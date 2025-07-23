@@ -1,6 +1,59 @@
+/* Volumes List (under gallery) */
+.volumes-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0 0.5rem 0;
+  flex-wrap: nowrap;
+}
+
+.volume-item {
+  background: linear-gradient(135deg, #fff 0%, #ffe5d0 100%);
+  color: #ff4500;
+  border: 2px solid #ff4500;
+  border-radius: 2rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s;
+  box-shadow: 0 1px 4px rgba(255, 69, 0, 0.08);
+  outline: none;
+  position: relative;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.1px;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.volume-number {
+  font-size: 1em;
+  font-weight: 700;
+  color: inherit;
+  margin-right: 0.18em;
+  letter-spacing: 0.1px;
+}
+
+.volume-item.active,
+.volume-item:focus,
+.volume-item:hover {
+  background: linear-gradient(135deg, #ff4500 0%, #ff7f50 100%);
+  color: #fff;
+  border: 2px solid #ff7f50;
+  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.15);
+}
+
+.volume-item.active .volume-number,
+.volume-item:focus .volume-number,
+.volume-item:hover .volume-number {
+  color: #fff;
+}
 /* Product Page Styles */
 .product-details {
   padding: 8rem 0 4rem;
+  padding-top: 7rem; /* Dodane, aby nie chowało się pod navbar (ok. 65-70px) */
   background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
   min-height: 100vh;
 }

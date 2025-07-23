@@ -1,191 +1,140 @@
-// Zmienne globalne dla produktów
-let currentDisplayedProducts = 0;
-const productsPerPage = 9;
-let filteredProducts = [...products];
-
 // Funkcja do tworzenia karty produktu
-function createProductCard(product) {
+function createProductCard(product, isEmpty = false) {
+  console.log(
+    "🏗️ Tworzenie karty produktu:",
+    isEmpty ? "PUSTA" : product ? product.name : "BRAK DANYCH"
+  );
+
   const productCard = document.createElement("div");
-  productCard.className = "product-card fade-in";
-  productCard.style.cursor = "pointer";
+  productCard.className = "product-card";
+  productCard.style.opacity = "0";
+  productCard.style.transform = "translateY(30px)";
+  productCard.style.transition = "all 0.6s ease";
 
-  // Dodanie event listenera do kliknięcia
-  productCard.addEventListener("click", () => {
-    window.location.href = `product.html?id=${product.id}`;
-  });
+  if (!isEmpty) {
+    productCard.style.cursor = "pointer";
+    // Dodanie event listenera do kliknięcia tylko dla produktu z danymi
+    productCard.addEventListener("click", () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+  }
 
-  // Tworzenie sekcji ze zdjęciami
-  const imagesHtml = product.images
-    .map(
-      (image) =>
-        `<div class="product-image">
-            <img src="${image}" alt="${product.name}" onerror="this.style.display='none'">
-        </div>`
-    )
-    .join("");
-
-  productCard.innerHTML = `
-        <div class="product-images">
-            ${imagesHtml}
+  if (isEmpty) {
+    // Pusta karta produktu
+    productCard.innerHTML = `
+      <div class="product-images">
+        <div class="product-image empty-image">
+          <i class="fas fa-plus" style="font-size: 2rem; color: #666;"></i>
         </div>
-        <div class="product-info">
-            <h3>${product.name}</h3>
-            <p class="product-description">${product.description}</p>
-        </div>
+      </div>
+      <div class="product-info">
+        <h3 style="color: #666;">Wkrótce...</h3>
+        <p class="product-description" style="color: #888;">Nowy produkt już wkrótce w naszej ofercie</p>
+      </div>
     `;
+  } else {
+    // Karta z produktem
+    if (!product) {
+      console.error("❌ Brak danych produktu!");
+      return null;
+    }
+
+    console.log(
+      "📸 Liczba zdjęć produktu:",
+      product.images ? product.images.length : 0
+    );
+
+    // Tworzenie sekcji ze zdjęciami
+    const imagesHtml = product.images
+      .slice(0, 2) // Pokazuj tylko pierwsze 2 zdjęcia w karcie
+      .map(
+        (image) =>
+          `<div class="product-image">
+              <img src="${image}" alt="${product.name}" onerror="this.style.display='none'">
+          </div>`
+      )
+      .join("");
+
+    productCard.innerHTML = `
+          <div class="product-images">
+              ${imagesHtml}
+          </div>
+          <div class="product-info">
+              <h3>${product.name}</h3>
+              <p class="product-description">${product.description}</p>
+          </div>
+      `;
+  }
 
   return productCard;
 }
 
-// Funkcja ładowania większej ilości produktów
-function loadMoreProducts() {
+// Funkcja do wyświetlania 6 kart produktów (1 z danymi, 5 pustych)
+function displayProducts() {
   const productsGrid = document.getElementById("productsGrid");
-  const loadMoreBtn = document.getElementById("loadMore");
 
-  if (!productsGrid || !loadMoreBtn) return;
+  if (!productsGrid) {
+    console.error("❌ Nie znaleziono elementu productsGrid");
+    return;
+  }
 
-  // Pokazuj loading
-  loadMoreBtn.innerHTML = '<span class="loading"></span> Ładowanie...';
-  loadMoreBtn.disabled = true;
+  console.log("📦 Wyświetlanie produktów...");
+  console.log(
+    "🔍 Liczba dostępnych produktów:",
+    products ? products.length : 0
+  );
+  console.log(
+    "📄 Pierwszy produkt:",
+    products && products[0] ? products[0] : "brak"
+  );
 
-  // Symulacja ładowania
-  setTimeout(() => {
-    const endIndex = Math.min(
-      currentDisplayedProducts + productsPerPage,
-      filteredProducts.length
-    );
-
-    for (let i = currentDisplayedProducts; i < endIndex; i++) {
-      const productCard = createProductCard(filteredProducts[i]);
-      productsGrid.appendChild(productCard);
-
-      // Animacja pojawiania się
-      setTimeout(() => {
-        productCard.style.opacity = "1";
-        productCard.style.transform = "translateY(0)";
-      }, (i - currentDisplayedProducts) * 100);
-    }
-
-    currentDisplayedProducts = endIndex;
-
-    // Ukryj przycisk jeśli wszystkie produkty są wyświetlone
-    if (currentDisplayedProducts >= filteredProducts.length) {
-      loadMoreBtn.style.display = "none";
-    } else {
-      loadMoreBtn.innerHTML = "Pokaż więcej produktów";
-      loadMoreBtn.disabled = false;
-    }
-  }, 800);
-}
-
-// Funkcja filtrowania produktów
-function filterProducts(type = "all") {
-  const productsGrid = document.getElementById("productsGrid");
-  const loadMoreBtn = document.getElementById("loadMore");
-
-  if (!productsGrid || !loadMoreBtn) return;
-
-  // Resetuj wyświetlane produkty
+  // Wyczyść siatkę produktów
   productsGrid.innerHTML = "";
-  currentDisplayedProducts = 0;
 
-  // Filtruj produkty
-  if (type === "all") {
-    filteredProducts = [...products];
+  // Dodaj pierwszą kartę z produktem (jeśli istnieje)
+  if (products && products.length > 0) {
+    console.log("✅ Tworzenie karty dla produktu:", products[0].name);
+    const productCard = createProductCard(products[0], false);
+    productsGrid.appendChild(productCard);
+
+    // Animacja pojawiania się
+    setTimeout(() => {
+      productCard.style.opacity = "1";
+      productCard.style.transform = "translateY(0)";
+    }, 100);
   } else {
-    filteredProducts = products.filter((product) => product.type === type);
+    console.error("❌ Brak produktów do wyświetlenia");
   }
 
-  // Pokaż przycisk jeśli są produkty do wyświetlenia
-  if (filteredProducts.length > productsPerPage) {
-    loadMoreBtn.style.display = "block";
-  } else {
-    loadMoreBtn.style.display = "none";
+  // Dodaj 5 pustych kart
+  console.log("➕ Dodawanie 5 pustych kart...");
+  for (let i = 1; i < 6; i++) {
+    const emptyCard = createProductCard(null, true);
+    productsGrid.appendChild(emptyCard);
+
+    // Animacja pojawiania się z opóźnieniem
+    setTimeout(() => {
+      emptyCard.style.opacity = "1";
+      emptyCard.style.transform = "translateY(0)";
+    }, (i + 1) * 100);
   }
 
-  // Aktualizuj aktywny przycisk filtru
-  updateActiveFilterButton(type);
-
-  // Załaduj pierwsze produkty
-  loadMoreProducts();
-}
-
-// Funkcja aktualizacji aktywnego przycisku filtru
-function updateActiveFilterButton(activeType) {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  filterButtons.forEach((btn) => {
-    btn.classList.remove("active");
-
-    // Sprawdź który przycisk powinien być aktywny
-    const btnType = btn.getAttribute("onclick").match(/'([^']+)'/)[1];
-    if (btnType === activeType) {
-      btn.classList.add("active");
-    }
-  });
-}
-
-// Funkcja tworzenia filtrów produktów
-function createProductFilters() {
-  const filtersHtml = `
-        <div class="product-filters" style="text-align: center; margin-bottom: 2rem;">
-            <button class="filter-btn active" onclick="filterProducts('all')">Wszystkie (24)</button>
-            <button class="filter-btn" onclick="filterProducts('active-foam')">Aktywne Piany (12)</button>
-            <button class="filter-btn" onclick="filterProducts('active-foam-truck')">Piany do Ciężarówek (8)</button>
-            <button class="filter-btn" onclick="filterProducts('engine-cleaner')">Środki do Silników (4)</button>
-        </div>
-        <style>
-            .product-filters {
-                display: flex;
-                gap: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .filter-btn {
-                padding: 0.8rem 1.5rem;
-                background: rgba(255, 255, 255, 0.2);
-                color: white;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                border-radius: 25px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-size: 0.9rem;
-            }
-            .filter-btn:hover, .filter-btn.active {
-                background: white;
-                color: #667eea;
-            }
-            @media (max-width: 768px) {
-                .product-filters {
-                    flex-direction: column;
-                    align-items: center;
-                }
-                .filter-btn {
-                    width: 100%;
-                    max-width: 300px;
-                }
-            }
-        </style>
-    `;
-
-  const productsSection = document.querySelector(".products .container");
-  const productsIntro = document.querySelector(".products-intro");
-
-  if (productsSection && productsIntro) {
-    productsIntro.insertAdjacentHTML("afterend", filtersHtml);
-  }
+  console.log("✅ Zakończono wyświetlanie produktów");
 }
 
 // Inicjalizacja produktów
 function initializeProducts() {
-  // Ładowanie początkowych produktów
-  loadMoreProducts();
+  console.log("🚀 Inicjalizacja modułu produktów...");
 
-  // Event listener dla przycisku "Pokaż więcej"
-  const loadMoreBtn = document.getElementById("loadMore");
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", loadMoreProducts);
+  // Sprawdź czy zmienna products jest dostępna
+  if (typeof products === "undefined") {
+    console.error("❌ Zmienna 'products' nie jest dostępna!");
+    console.log("🔄 Próba ponownego ładowania za 500ms...");
+    setTimeout(initializeProducts, 500);
+    return;
   }
 
-  // Tworzenie filtrów
-  setTimeout(createProductFilters, 100);
+  console.log("✅ Zmienna 'products' jest dostępna");
+  // Wyświetlenie 6 kart produktów
+  displayProducts();
 }
