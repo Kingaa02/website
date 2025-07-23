@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produkt - Spark</title>
+    <title>Active Foam 2 - Spark</title>
     <link rel="stylesheet" href="style-modular.css?v=20250116-002" />
     <link rel="stylesheet" href="css/product-page.css?v=20250116-001" />
     <link
@@ -82,7 +82,18 @@
             <div class="product-volumes-list">
               <h3>Dostępne objętości:</h3>
               <div class="volumes-list">
-                <!-- Przyciski objętości będą generowane dynamicznie przez JS na podstawie danych produktu -->
+                <button class="volume-item" data-image-index="0">
+                  <span class="volume-number">1</span> kg
+                </button>
+                <button class="volume-item" data-image-index="2">
+                  <span class="volume-number">5,5</span> kg
+                </button>
+                <button class="volume-item" data-image-index="4">
+                  <span class="volume-number">10,5</span> kg
+                </button>
+                <button class="volume-item" data-image-index="6">
+                  <span class="volume-number">21</span> kg
+                </button>
               </div>
             </div>
           </div>
@@ -184,5 +195,14 @@
     <script src="js/products-data.js"></script>
     <script src="js/product-page.js"></script>
     <script src="js/navigation.js"></script>
+    <script>
+      // Automatycznie wybierz produkt Active Foam 2 na tej stronie
+      document.addEventListener("DOMContentLoaded", function () {
+        // Zmień id produktu na 2
+        const url = new URL(window.location.href);
+        url.searchParams.set("id", "2");
+        window.history.replaceState({}, "", url);
+      });
+    </script>
   </body>
 </html>

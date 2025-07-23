@@ -15,6 +15,12 @@ const products = [
       "images/Active foam 3/Active_foam_3_2.png",
       "images/Active foam 4/Active_foam_4.png",
     ],
+    volumes: [
+      { label: "1", imageIndex: 0 },
+      { label: "5,5", imageIndex: 2 },
+      { label: "10,2", imageIndex: 4 },
+      { label: "21", imageIndex: 6 },
+    ],
     details: {
       volume: "1L, 5L, 25L",
       ph: "7-8",
@@ -42,6 +48,58 @@ const products = [
         {
           name: "Charakterystyka produktu",
           url: "downloads/SDS-SPARK_Active_Foam_1-PL-pl.pdf",
+        },
+      ],
+    },
+  },
+  {
+    id: 2,
+    name: "Active Foam 2",
+    category: "active-foam",
+    description:
+      "Zaawansowana aktywna piana do mycia pojazdów osobowych i ciężarowych. Skutecznie usuwa zabrudzenia drogowe, tłuszcze i inne zanieczyszczenia, pozostawiając powierzchnię czystą i lśniącą.",
+    images: [
+      "images/Active foam 5/Active_foam_5_1.png", // 1kg
+      "images/Active foam 5/Active_foam_5_2.png",
+      "images/Active foam 6/Active_foam_6_1.png", // 5.5kg
+      "images/Active foam 6/Active_foam_6_2.png",
+      "images/Active foam 7/Active_foam_7_1.png", // 10.5kg
+      "images/Active foam 7/Active_foam_7_2.png",
+      "images/Active foam 8/Active_foam_8.png", // 21kg
+    ],
+    volumes: [
+      { label: "1", imageIndex: 0 },
+      { label: "5,5", imageIndex: 2 },
+      { label: "10,5", imageIndex: 4 },
+      { label: "21", imageIndex: 6 },
+    ],
+    details: {
+      volume: "1kg, 5,5kg, 10,5kg, 21kg",
+      ph: "7-8",
+      dilution: "1:10 - 1:50",
+      temperature: "5°C - 40°C",
+      features: [
+        "Silna i skuteczna formuła piany",
+        "Bezpieczna dla lakieru i elementów plastikowych",
+        "Doskonała przyczepność do powierzchni",
+        "Łatwe spłukiwanie bez smug",
+        "Ekonomiczne dozowanie",
+        "Biodegradowalna formuła",
+      ],
+      application: [
+        "Rozcieńczyć produkt zgodnie z zaleceniami (1:10 - 1:50)",
+        "Nanieść pianę za pomocą lancy pianowej lub natryskiwacza",
+        "Pozostawić na powierzchni przez 2-5 minut",
+        "Nie pozwolić na wyschnięcie produktu",
+        "Spłukać dokładnie strumieniem wody pod ciśnieniem",
+        "Nie stosować na gorących powierzchniach",
+      ],
+      safety:
+        "Produkt należy przechowywać w temperaturze od 5°C do 25°C, chronić przed działaniem promieni słonecznych i mrozu. Stosować zgodnie z kartą charakterystyki produktu. W przypadku kontaktu z oczami przemyć dużą ilością czystej wody i skonsultować się z lekarzem.",
+      downloads: [
+        {
+          name: "Charakterystyka produktu",
+          url: "downloads/SDS-SPARK_Active_Foam_2-PL-pl.pdf",
         },
       ],
     },

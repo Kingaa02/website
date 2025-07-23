@@ -21,9 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Sprawdź czy to produkt Active Foam 1
-  if (!product.name.includes("Active Foam 1")) {
-    showComingSoonMessage(product);
+  if (!product) {
+    // Jeśli nie znaleziono produktu, pokaż komunikat "Coming Soon"
+    document.querySelector(".product-content").innerHTML = `
+    <div class="coming-soon">
+      <h2>Coming Soon</h2>
+      <p>Strona produktu w przygotowaniu.</p>
+      <a href="index.html#products" class="btn-primary">Powrót do produktów</a>
+    </div>
+  `;
     return;
   }
 
@@ -200,28 +206,34 @@ function setupImageGallery(product) {
 }
 
 function setupVolumeButtons(product) {
-  // Obsługa przycisków objętości pod galerią
-  const volumeButtons = document.querySelectorAll(
-    ".product-volumes-list .volume-item"
-  );
+  // Dynamiczne generowanie przycisków objętości na podstawie product.volumes
+  const volumesList = document.querySelector(".volumes-list");
   const mainImage = document.getElementById("mainProductImage");
-  if (!volumeButtons.length || !product || !mainImage) return;
+  if (!volumesList || !product || !mainImage || !product.volumes) return;
 
-  volumeButtons.forEach((btn) => {
+  volumesList.innerHTML = "";
+  product.volumes.forEach((vol, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "volume-item";
+    btn.setAttribute("data-image-index", vol.imageIndex);
+    btn.innerHTML = `<span class="volume-number">${vol.label}</span> kg`;
     btn.addEventListener("click", function () {
-      // Zmień zdjęcie na odpowiedni indeks
-      const idx = parseInt(this.getAttribute("data-image-index"), 10);
-      if (product.images[idx]) {
-        mainImage.src = product.images[idx];
-        mainImage.alt = product.name + " - zdjęcie " + (idx + 1);
+      if (product.images[vol.imageIndex]) {
+        mainImage.src = product.images[vol.imageIndex];
+        mainImage.alt = product.name + " - zdjęcie " + (vol.imageIndex + 1);
       }
       // Ustaw aktywny przycisk
-      volumeButtons.forEach((b) => b.classList.remove("active"));
-      this.classList.add("active");
+      document
+        .querySelectorAll(".volume-item")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
       // Przeskakująca ramka w miniaturkach
       const thumbnails = document.querySelectorAll(".thumbnail");
-      thumbnails.forEach((t, i) => t.classList.toggle("active", i === idx));
+      thumbnails.forEach((t, i) =>
+        t.classList.toggle("active", i === vol.imageIndex)
+      );
     });
+    volumesList.appendChild(btn);
   });
 }
 

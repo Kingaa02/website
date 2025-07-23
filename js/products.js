@@ -91,27 +91,29 @@ function displayProducts() {
   // Wyczyść siatkę produktów
   productsGrid.innerHTML = "";
 
-  // Dodaj pierwszą kartę z produktem (jeśli istnieje)
+  // Dodaj karty dla dwóch pierwszych produktów (jeśli istnieją)
+  let realProducts = 0;
   if (products && products.length > 0) {
-    console.log("✅ Tworzenie karty dla produktu:", products[0].name);
-    const productCard = createProductCard(products[0], false);
-    productsGrid.appendChild(productCard);
-
-    // Animacja pojawiania się
-    setTimeout(() => {
-      productCard.style.opacity = "1";
-      productCard.style.transform = "translateY(0)";
-    }, 100);
+    for (let i = 0; i < 2 && i < products.length; i++) {
+      console.log("✅ Tworzenie karty dla produktu:", products[i].name);
+      const productCard = createProductCard(products[i], false);
+      productsGrid.appendChild(productCard);
+      realProducts++;
+      // Animacja pojawiania się
+      setTimeout(() => {
+        productCard.style.opacity = "1";
+        productCard.style.transform = "translateY(0)";
+      }, (i + 1) * 100);
+    }
   } else {
     console.error("❌ Brak produktów do wyświetlenia");
   }
 
-  // Dodaj 5 pustych kart
-  console.log("➕ Dodawanie 5 pustych kart...");
-  for (let i = 1; i < 6; i++) {
+  // Dodaj puste karty, aby było łącznie 6
+  console.log("➕ Dodawanie pustych kart...");
+  for (let i = realProducts; i < 6; i++) {
     const emptyCard = createProductCard(null, true);
     productsGrid.appendChild(emptyCard);
-
     // Animacja pojawiania się z opóźnieniem
     setTimeout(() => {
       emptyCard.style.opacity = "1";
