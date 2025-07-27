@@ -1,5 +1,3 @@
-/* filepath: c:\Users\LENOVO\Desktop\website\js\product-page.js */
-// Product Page JavaScript
 document.addEventListener("DOMContentLoaded", function () {
   setupVolumeButtons();
   // Pobierz ID produktu z URL
@@ -118,23 +116,40 @@ function displayProductDetails(product) {
   document.getElementById("productCategory").textContent = product.category;
   document.getElementById("productName").textContent = product.name;
 
-  // Szczegółowy opis dla produktów Active Foam 1
+  // Szczegółowy opis dla produktów
   let detailedDescription = product.description;
 
+  // Podkreślenie cech w opisie + dłuższy opis dla Active Foam 1
   if (product.name.includes("Active Foam 1")) {
-    // Wyciągnij wagę z nazwy produktu
-    const weightMatch = product.name.match(/\(([\d.,]+)\s*kg\)/);
-    const weight = weightMatch ? weightMatch[1] : "nie określona";
-
-    detailedDescription = `Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego pojazdów. Skutecznie usuwa brud drogowy, zanieczyszczenia, olej silnikowy oraz resztki insektów z powierzchni karoserii.
-
-Produkt nie uszkadza powłok wykonanych z metali nieżelaznych, a powstająca piana łatwo spływa z powierzchni. Zawiera specjalne dodatki antykorozyjne, które chronią metalowe elementy pojazdu podczas procesu mycia.
-
-Formuła jest w pełni kompatybilna z każdym systemem dozowania w samoobsługowych stacjach myjni, co czyni ją idealnym wyborem zarówno dla zastosowań zawodowych, jak i konsumenckich (gospodarstwa domowe).
-
-Waga opakowania: ${weight} kg
-Przeznaczenie: Zastosowanie zawodowe i konsumenckie
-Typ aplikacji: Mycie bezdotykowe`;
+    detailedDescription =
+      "<b>Silnie pieniący produkt, tworzy bardzo gęstą pianę – tzw. efekt śniegu.</b><br>" +
+      product.description +
+      "<br><br><b>Dodatkowe informacje:</b><br>" +
+      "Przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, zanieczyszczenia, olej silnikowy oraz resztki insektów. Nie uszkadza powierzchni wykonanych z metali nieżelaznych. Piana łatwo spływa z powierzchni i zawiera dodatki antykorozyjne. Kompatybilny z każdym systemem dozowania w samoobsługowych stacjach myjni.<br>Zastosowanie zawodowe.<br>Zastosowanie przez konsumentów (gospodarstwa domowe).";
+  } else if (product.name.includes("Active Foam 2")) {
+    detailedDescription =
+      "<b>Przeznaczona do twardej wody – zawiera zmiękczacze w składzie.</b><br>" +
+      product.description +
+      "<br><br><b>Dodatkowe informacje:</b><br>" +
+      "Wysoko skoncentrowany preparat o dużym efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, zanieczyszczenia, olej silnikowy oraz resztki insektów. Nie uszkadza powierzchni wykonanych z metali nieżelaznych. Piana łatwo spływa z powierzchni i zawiera dodatki antykorozyjne. Kompatybilny z każdym systemem dozowania w samoobsługowych stacjach myjni.<br>Zastosowanie zawodowe.<br>Zastosowanie przez konsumentów (gospodarstwa domowe).";
+  } else if (product.name.includes("Active Foam 3")) {
+    detailedDescription =
+      "<b>Uniwersalny do każdego typu wody, piana średniej gęstości.</b><br>" +
+      product.description +
+      "<br><br><b>Dodatkowe informacje:</b><br>" +
+      "Wysoko skoncentrowany preparat o średnim efekcie pienienia, przeznaczony do mycia bezdotykowego. Skutecznie usuwa brud drogowy, zanieczyszczenia, olej silnikowy oraz resztki insektów. Nie uszkadza powierzchni wykonanych z metali nieżelaznych. Piana łatwo spływa z powierzchni i zawiera dodatki antykorozyjne. Kompatybilny z każdym systemem dozowania w samoobsługowych stacjach myjni.<br>Zastosowanie zawodowe.<br>Zastosowanie przez konsumentów (gospodarstwa domowe).";
+  } else if (product.name.includes("Truck 1")) {
+    detailedDescription =
+      "<b>Silnie pieniący, jak Active Foam 1.</b><br>" +
+      product.description +
+      "<br><br><b>Dodatkowe informacje:</b><br>" +
+      "Silny, wysoko skoncentrowany środek nowej generacji przeznaczony do bezdotykowego mycia samochodów osobowych, ciężarówek oraz maszyn specjalnych. Posiada silny efekt pieniący. Jest specjalnie opracowany do usuwania trudnych zabrudzeń z pojazdów.<br>Zastosowanie zawodowe.";
+  } else if (product.name.includes("Truck 2")) {
+    detailedDescription =
+      "<b>Mniej pieniąca, ale o silniejszym działaniu czyszczącym i odtłuszczającym.</b><br>" +
+      product.description +
+      "<br><br><b>Dodatkowe informacje:</b><br>" +
+      "Detergent / Bezdotykowy środek czyszczący (czyszczenie podstawowe) do zewnętrznych powierzchni pojazdów.<br>Zastosowanie zawodowe.";
   }
 
   // Zmniejszone odstępy między akapitami - z <br><br> na <br>
@@ -286,7 +301,6 @@ function createDownloadButton(iconClass, buttonText, filePath) {
     ${buttonText}
   `;
 
-  // Usuń onclick całkowicie - pozwól na normalne działanie linka
   return button;
 }
 
