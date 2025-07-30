@@ -115,8 +115,8 @@
   }
 
   .nav-menu a {
-    font-size: 1rem; /* ZMNIEJSZONE na mobile */
-    padding: 1rem 0;
+    font-size: 0.95rem; /* Jeszcze mniejsze na mobile */
+    padding: 0.7rem 0;
   }
 
   .nav-menu.active {
@@ -124,8 +124,8 @@
   }
 
   .logo {
-    height: 45px; /* ZMNIEJSZONE z 50px */
-    max-width: 160px; /* ZMNIEJSZONE z 180px */
+    height: 36px; /* Jeszcze mniejsze logo na mobile */
+    max-width: 120px; /* Jeszcze mniejsze logo na mobile */
   }
 }
 
@@ -136,7 +136,11 @@
   }
 
   .logo {
-    height: 40px; /* ZMNIEJSZONE z 45px */
-    max-width: 130px; /* ZMNIEJSZONE z 140px */
+    height: 28px; /* Jeszcze mniejsze logo na bardzo małych ekranach */
+    max-width: 90px;
+  }
+  .nav-menu a {
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
   }
 }
